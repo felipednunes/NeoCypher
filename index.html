@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeoCypher</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.ico" />
+  <meta name="theme-color" content="#00ff40" />
+</head>
+<body class="crt-scanlines crt-glitch-loop">
+  <canvas id="matrix"></canvas>
+
+  <!-- Música de fundo -->
+  <audio id="bg-music" src="musica.mp3" autoplay loop></audio>
+
+  <!-- Overlay visual CRT -->
+  <div class="overlay"></div>
+
+  <!-- Container principal -->
+  <div class="container">
+    <h1 class="title">NeoCypher</h1>
+    <span class="subtitle">Gerador de senhas aleatórias sem armazenamento</span>
+
+    <div class="top-section">
+      <div class="checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="uppercase" checked>
+          Letras Maiúsculas
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="lowercase" checked>
+          Letras Minúsculas
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="numbers" checked>
+          Números
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="symbols">
+          Símbolos
+        </label>
+      </div>
+
+      <div class="slider-group">
+        <label for="length">Tamanho da Senha: <span id="length-value">12</span></label>
+        <input type="range" id="length" min="4" max="36" value="12">
+      </div>
+
+      <button id="generate">GERAR SENHA</button>
+    </div>
+
+    <div class="bottom-section">
+      <div id="result">Sua senha vai aparecer aqui</div>
+      <button id="copy">COPIAR</button>
+    </div>
+
+    <div id="credits">by Nunes, Felipe ⚡</div>
+
+  </div>
+
+  <!-- controle de Volume -->
+
+  <div class="volume-control">
+    <img id="volume-icon" src="sound-on.svg" alt="Volume Icon" width="35" height="35">
+    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+  </div>
+
+  <script src="scripts.js"></script>
+
+</body>
+</html>
